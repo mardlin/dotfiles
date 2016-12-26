@@ -1,0 +1,40 @@
+eval "source $HOME/.cargo/env"
+eval "$(rbenv init -)"
+
+export EDITOR='subl -w'
+# export PYTHONPATH=$PYTHONPATH
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# Virtual Environment
+# export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+# source /usr/local/bin/virtualenvwrapper.sh
+
+# Owner
+export USER_NAME="YOUR NAME"
+# eval "$(rbenv init -)"
+
+# FileSearch
+function f() { find . -iname "*$1*" ${@:2} }
+function r() { grep "$1" ${@:2} -R . }
+
+#mkdir and cd
+function mkcd() { mkdir -p "$@" && cd "$_"; }
+
+# search in dash
+function ds() { open "dash://$*" }
+
+# Aliases
+
+alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+alias Chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias proj="cd ~/Projects"
+alias etp="cd ~/Projects/eth-play"
+alias srz="source ~/.zshrc"
+alias al="ls -al"
+alias tmp="cd ~/temp"
+
+# run ls whenever the current working directory is changed
+function chpwd() {
+  ls
+}
